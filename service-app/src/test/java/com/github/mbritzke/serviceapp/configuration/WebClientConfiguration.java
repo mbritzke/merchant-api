@@ -1,7 +1,7 @@
 package com.github.mbritzke.serviceapp.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.mbritzke.serviceapp.stub.MerchantClientDtoStub;
+import com.github.mbritzke.serviceapp.stub.MerchantClientResponseStub;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpHeaders;
@@ -53,7 +53,7 @@ public class WebClientConfiguration {
                         ClientResponse.create(HttpStatus.OK)
                                 .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
                                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                                .body(objectMapper.writeValueAsString(List.of(MerchantClientDtoStub.create())))
+                                .body(objectMapper.writeValueAsString(List.of(MerchantClientResponseStub.create())))
                                 .build());
     }
 }

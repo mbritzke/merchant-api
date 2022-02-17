@@ -2,7 +2,7 @@ package com.github.mbritzke.serviceapp.client;
 
 import com.github.mbritzke.serviceapp.configuration.WebClientConfiguration;
 import com.github.mbritzke.serviceapp.exception.MerchantErrorException;
-import com.github.mbritzke.serviceapp.stub.MerchantClientDtoStub;
+import com.github.mbritzke.serviceapp.stub.MerchantClientResponseStub;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,7 +28,7 @@ class MerchantHttpClientTest {
         Flux<MerchantClientResponse> actual = client.getMerchants();
         StepVerifier.create(actual).assertNext(
                 merchant -> {
-                    Assertions.assertThat(merchant).usingRecursiveComparison().isEqualTo(MerchantClientDtoStub.create());
+                    Assertions.assertThat(merchant).usingRecursiveComparison().isEqualTo(MerchantClientResponseStub.create());
                 }).verifyComplete();
     }
 
