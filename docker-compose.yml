@@ -9,5 +9,5 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - "./merchants-table.sql:/docker-entrypoint-initdb.d/1.sql" 
+      - "./db-file/merchants-table.sql:/docker-entrypoint-initdb.d/1.sql" 
  
