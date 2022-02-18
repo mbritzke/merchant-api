@@ -1,10 +1,14 @@
 # architecture-challenge
  
-This repository presents an application divided into two modules that is responsible for saving a list of merchants in the database and returning a new list based on the chosen country.
+This repository presents an application responsible for saving a list of merchants in the database and returning a new list based on the chosen country.
 
 ## Technologies
 
-MySQL, Docker, docker-compose
+- Spring boot
+- Spring WebFlux
+- Java 11
+- MySQL
+- docker-compose
 
 ## Installation
 
@@ -14,16 +18,16 @@ If you don't have the above technologies, please install them first. If you alre
 cd architecture-challenge/db-files
 docker-compose up
 ```
-In another terminal, run these commands
+In another terminal, run these commands:
+
+```bash
+cd cd architecture-challenge/service-app
+./gradlew clean build
+./gradlew bootRun
+```
+If you want to see the data inside the MySQL instance, you can run the following commands:
 
 ```bash
 docker exec -it db-files_db_1 bash
 mysql -uroot -p db_merchant
-CREATE TABLE Merchants (
-    Id int,
-    Name varchar(255),
-    MinAmount numeric(5,2),
-    MaxAmount numeric(5,2),
-    Website varchar(255)
-);
 ```
