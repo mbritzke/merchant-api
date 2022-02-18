@@ -5,10 +5,12 @@ import com.github.mbritzke.serviceapp.service.MerchantService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
+@RequestMapping("/merchant")
 public class MerchantApi {
 
     private final MerchantService service;
@@ -17,7 +19,7 @@ public class MerchantApi {
         this.service = service;
     }
 
-    @GetMapping("/{country}")
+    @GetMapping("/findByCountry/{country}")
     public ResponseEntity<Flux<MerchantDto>> getMerchantsByCountry(@PathVariable("country") CountryEnum country) {
         return ResponseEntity.ok(service.getMerchantsByCountry(country));
     }
