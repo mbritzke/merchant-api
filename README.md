@@ -15,7 +15,7 @@ This repository presents an application responsible for saving a list of merchan
 If you don't have the above technologies, please install them first. If you already have, run the commands below in a specific terminal:
 
 ```bash
-cd architecture-challenge/db-files
+cd architecture-challenge/db-file
 docker-compose up
 ```
 In another terminal, run these commands:
