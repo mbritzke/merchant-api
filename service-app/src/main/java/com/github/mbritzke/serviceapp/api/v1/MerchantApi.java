@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
-@RequestMapping("/merchant")
+@RequestMapping("/merchants")
 public class MerchantApi {
 
     private final MerchantService service;
@@ -19,7 +19,7 @@ public class MerchantApi {
         this.service = service;
     }
 
-    @GetMapping("/findByCountry/{country}")
+    @GetMapping("/countries/{country}")
     public ResponseEntity<Flux<MerchantDto>> getMerchantsByCountry(@PathVariable("country") CountryEnum country) {
         return ResponseEntity.ok(service.getMerchantsByCountry(country));
     }
