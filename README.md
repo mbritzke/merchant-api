@@ -5,6 +5,10 @@ This repository presents an application that has two responsibilities:
 - I. Save the response of an API that provides a list of consumers in a database.
 - II. Provide a GET API that returns a list of consumers based on their country.
 
+<p align="center">
+  <img alt="Demo" title="Ponto CLI" src="./demo.gif">
+</p>
+
 ## Technologies
 
 - Java 11
