@@ -1,4 +1,4 @@
-# architecture-challenge
+# merchant-api
  
 This repository presents an application that has two responsibilities:
 
